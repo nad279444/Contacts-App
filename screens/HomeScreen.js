@@ -25,10 +25,12 @@ const styles = StyleSheet.create({
   imageContainer: {
     alignItems: "center",
     marginVertical: 150,
+    flex: 1
   },
   titleContainer: {
       alignItems: 'center',
-      marginTop: 100
+      marginTop: 100,
+      flex: 1
   },
   titleText: {
       fontSize: 28,
@@ -38,8 +40,9 @@ const styles = StyleSheet.create({
   bottomTextContainer: {
       borderBottomWidth: 2,
       borderBottomColor: "red",
-      marginTop: 200,
-      alignItems: 'center'
+      marginTop: 250,
+      alignItems: 'center',
+
 
   },
   bottomText: {

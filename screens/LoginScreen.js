@@ -47,7 +47,9 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1
+  },
   input: {
     borderBottomColor: 'grey',
     borderBottomWidth: 2,
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
   image: {
     width: 370,
     height: 200,
+    flex: 1
   },
   textHeader: {
     position: "absolute",
@@ -66,6 +69,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginTop: 50,
+    flex:1
   },
   button: {
       width: 320,
@@ -76,6 +80,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 5,
+      flex: 1
+      
   },
   buttonText: {
       color: 'white',
@@ -84,7 +90,8 @@ const styles = StyleSheet.create({
   lastTextContainer: {
       flexDirection: 'row',
       marginTop: 60,
-      marginHorizontal: 20
+      marginHorizontal: 20,
+      justifyContent: 'flex-start'
   },
   reset: {
       marginLeft: 10,

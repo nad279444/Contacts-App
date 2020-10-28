@@ -108,7 +108,9 @@ export default function RegisterScreen() {
 }
 
 const styles = StyleSheet.create({
- 
+ container: {
+   flex: 1
+ },
   input: {
     borderBottomColor: "grey",
     borderBottomWidth: 2,
