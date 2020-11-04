@@ -1,43 +1,84 @@
-import React from 'react'
-import {View,StyleSheet,Image,Text} from 'react-native'
-import { Entypo,Fontisto ,Feather,EvilIcons} from '@expo/vector-icons';
+import React from "react";
+import { View, StyleSheet, Image, Text } from "react-native";
+import { Entypo, Fontisto, Feather, EvilIcons } from "@expo/vector-icons";
 
+export default function Member() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+          <View>
+              <Image source={require("../assets/img3.jpg")} style={styles.image} /> 
+          </View>
+        
+        <View style={styles.textContainer}>
+          <Text style={styles.Text}> Ben</Text>
+          <Text style={styles.TechText}> Tech Lead </Text>
+        </View>
+      </View>
 
-export default function Member({route}){
-    const{name,role}= route.params
-   return(
-       <View>
-           <View>
-                <Image source={require('../assets/img3.jpg')} style={styles.image}/>
-                <Text> {name}</Text>
-                <Text> {role} </Text> 
-           </View>
-           <View>
-              <Entypo name="twitter-with-circle" size={24} color="black" />
-              <Entypo name="linkedin-with-circle" size={24} color="black" />
-           </View>
-           <View>
-               <View>
-                   <Feather name="phone" size={24} color="black" />
-                   <Text >+233 (244) 234 1234</Text>
-               </View>
-               <View>
-                   <Fontisto name="email" size={24} color="black" />
-                   <Text> Zak@codetrain.co</Text>
-               </View>
-               <View>
-                   <EvilIcons name="location" size={24} color="black" />
-                   <Text> Shoriditch,Uk</Text>
-               </View>
-           </View>
-          
-       </View>
-   )
+      <View style={styles.mediaContainer}>
+        <Entypo name="twitter-with-circle" size={24} color="black" />
+        <View style={styles.in}><Entypo name="linkedin-with-circle" size={24} color="black" /></View>
+      </View>
+      <View style={styles.iconContainer}>
+        <View style={styles.icon}>
+          <Feather name="phone" size={20} color="black" />
+          <Text style={styles.Text}>+233 (244) 234 1234</Text>
+        </View>
+        <View style={styles.icon}>
+          <Fontisto name="email" size={20} color="black" />
+          <Text style={styles.Text}> Zak@codetrain.co</Text>
+        </View>
+        <View style={styles.icon} >
+          <EvilIcons name="location" size={20} color="black" />
+          <Text style={styles.Text}> Shoriditch,Uk</Text>
+        </View>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    image: {
-        width: 50,
-        height: 50
-    }
-})
+  container: {
+    flex: 1,
+    paddingHorizontal: 20
+  },
+  image: {
+    width: 50,
+    height: 50,
+    borderRadius: 45,
+  },
+  imageContainer: {
+    flex: 0.3,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: 'flex-start',
+    
+  },
+  textContainer: {
+    flexDirection: "column",
+  },
+  mediaContainer: {
+      flexDirection: 'row',
+      flex: 0.1,
+      
+  },
+  icon: {
+      flexDirection: 'row',
+      flex: 0.3
+  },
+  iconContainer: {
+    flex: 0.3
+  },
+  Text: {
+      paddingHorizontal: 10
+  },
+  TechText: {
+    paddingHorizontal: 10,
+    color: 'grey'
+},
+in: {
+    paddingHorizontal: 5
+}
+ 
+});
