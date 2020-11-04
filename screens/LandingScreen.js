@@ -6,27 +6,27 @@ export default function LandingScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.ImageContainer}>
-      <Image
-        source={require("../assets/damir.jpg")}
-        style={styles.LandingImage}
-      />
+        <Image
+          source={require("../assets/damir.jpg")}
+          style={styles.LandingImage}
+        />
       </View>
-     
+
       <View style={styles.WelcomeTextContainer}>
         <Text style={styles.WelcomeText}>
           KEEP IN TOUCH WITH THE PEOPLE OF{" "}
         </Text>
         <Text style={styles.WelcomeText}>CODETRAIN</Text>
-      </View>
-      <Text style={styles.helpText}>
-        {" "}
-        Sign in or register with your Codetrain email
-      </Text>
+        <Text style={styles.helpText}>
+          Sign in or register with your Codetrain email
+        </Text>
+        </View>
+  
       <View style={styles.bottomTextContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
           <Text style={styles.registerText}>REGISTER</Text>
         </TouchableOpacity>
-        <TouchableOpacity  onPress={() => navigation.navigate('Sign In')} >
+        <TouchableOpacity onPress={() => navigation.navigate("Sign In")}>
           <Text style={styles.signInText}>SIGN IN</Text>
         </TouchableOpacity>
       </View>
@@ -36,29 +36,30 @@ export default function LandingScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   ImageContainer: {
-    flex: 2
+    flex: 0.8,
   },
   LandingImage: {
     width: 400,
     height: 400,
   },
   WelcomeTextContainer: {
-    paddingTop: 40,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    flex: 0.2
+    alignItems: 'center',
+    flex: 0.4,
   },
   WelcomeText: {
     fontSize: 18,
     color: "#57554c",
+    alignSelf: 'flex-start',
+    paddingLeft: 20
+    
+  
   },
   bottomTextContainer: {
     flexDirection: "row",
-    marginTop: 120,
-    flex: 0.3
+    flex: 0.1,
   },
   registerText: {
     borderBottomWidth: 2,
@@ -76,9 +77,7 @@ const styles = StyleSheet.create({
   },
   helpText: {
     color: "#b3b1aa",
-    marginHorizontal: 20,
-    paddingTop: 10,
-    flex: 0.1
-    
+    alignSelf: "flex-start",
+    paddingLeft: 20
   },
 });

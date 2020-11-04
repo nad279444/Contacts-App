@@ -8,7 +8,10 @@ export default function LoginScreen() {
     })
   return (
     <ScrollView style={styles.container}>
-      <Image source={require("../assets/benjamin.jpg")} style={styles.image} />
+      <View style={styles.imageContainer}>
+         <Image source={require("../assets/benjamin.jpg")} style={styles.image} />
+      </View>
+     
       <View style={styles.inputContainer}>
         <View>
           <Text style={styles.textHeader}>Email</Text>
@@ -50,6 +53,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  imageContainer: {
+    flex: 0.3
+  },
   input: {
     borderBottomColor: 'grey',
     borderBottomWidth: 2,
@@ -60,7 +66,7 @@ const styles = StyleSheet.create({
   image: {
     width: 370,
     height: 200,
-    flex: 1
+  
   },
   textHeader: {
     position: "absolute",
@@ -68,8 +74,8 @@ const styles = StyleSheet.create({
     left: 20
   },
   inputContainer: {
-    marginTop: 50,
-    flex:1
+    flex:0.4,
+    paddingVertical: 30
   },
   button: {
       width: 320,
@@ -89,9 +95,9 @@ const styles = StyleSheet.create({
   },
   lastTextContainer: {
       flexDirection: 'row',
-      marginTop: 60,
-      marginHorizontal: 20,
-      justifyContent: 'flex-start'
+      justifyContent: 'flex-start',
+      flex: 0.3,
+      padding: 20,
   },
   reset: {
       marginLeft: 10,

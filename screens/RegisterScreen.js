@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 
-export default function RegisterScreen() {
+export default function RegisterScreen({navigation}) {
   const [state, setState] = useState({
     fullname: "",
     email: "",
@@ -100,7 +100,7 @@ export default function RegisterScreen() {
           />
         </View>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Codetrain')}>
         <Text style={styles.buttonText}>REGISTER </Text>
       </TouchableOpacity>
     </ScrollView>
@@ -122,7 +122,8 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ebe8e1'
+    backgroundColor: '#ebe8e1',
+    flex: 0.3
   },
   textHeader: {
     position: "absolute",
@@ -130,27 +131,24 @@ const styles = StyleSheet.create({
     left: 20,
   },
   inputContainer: {
-    marginTop: 10,
+   flex: 0.5
   },
   button: {
+    flex: 0.2,
     width: 320,
     height: 40,
     backgroundColor: "red",
-    marginTop: 30,
-    marginLeft: 20,
+    alignSelf: 'center',
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     borderRadius: 5,
+    marginTop: 20
   },
   buttonText: {
     color: "white",
     fontSize: 20,
   },
-  lastTextContainer: {
-    flexDirection: "row",
-    marginTop: 60,
-    marginHorizontal: 20,
-  },
+ 
   reset: {
     marginLeft: 10,
     borderBottomColor: "red",

@@ -19,18 +19,17 @@ export default function HomeScreen({navigation}) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 220,
-    height: 40,
+     width: 220,
+     height: 40,
+    
   },
   imageContainer: {
-    alignItems: "center",
-    marginVertical: 150,
-    flex: 1
+    flex: 1,
+    justifyContent:"space-around",
+    alignItems:"center"
   },
   titleContainer: {
       alignItems: 'center',
-      marginTop: 100,
-      flex: 1
   },
   titleText: {
       fontSize: 28,
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
   bottomTextContainer: {
       borderBottomWidth: 2,
       borderBottomColor: "red",
-      marginTop: 250,
       alignItems: 'center',
 
 
