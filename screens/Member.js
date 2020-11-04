@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 import { Entypo, Fontisto, Feather, EvilIcons } from "@expo/vector-icons";
 
-export default function Member() {
+export default function Member({route,navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -11,8 +11,8 @@ export default function Member() {
           </View>
         
         <View style={styles.textContainer}>
-          <Text style={styles.Text}> Ben</Text>
-          <Text style={styles.TechText}> Tech Lead </Text>
+  <Text style={styles.Text}> {route.params.name}</Text>
+          <Text style={styles.TechText}> {route.params.role} </Text>
         </View>
       </View>
 

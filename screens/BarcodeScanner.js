@@ -6,10 +6,7 @@ export default function App({navigation}) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   
-  const info = {
-    'name ': 'James Bond',
-    'role': 'Detective'
-  }
+ 
   const SendQR = (info) => {
     console.log(info)
     navigation.navigate('Member Profile',{...info})
@@ -24,7 +21,9 @@ export default function App({navigation}) {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    SendQR(data)
+    const info = JSON.parse(data)
+    SendQR(info)
+    
     //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   };
 

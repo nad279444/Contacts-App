@@ -6,7 +6,6 @@ import {QRCode} from 'react-native-custom-qr-codes-expo'
 
 
 export default function SharingScreen ({navigation}){
-  
     
     return(
         <View style={styles.container}>
