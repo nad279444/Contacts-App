@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button,TouchableOpacity } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner'
+import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 export default function App({navigation}) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -38,20 +39,28 @@ export default function App({navigation}) {
     <View style={{
       flex: 1
     }}>
-      
+       
     <View
       style={{
         flex: 1.3,
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
         alignItems: 'flex-end'
+    
       }}>
+       
+       
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}
       />
 
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+      <TouchableOpacity style={{
+        padding: 25
+      }} onPress={() => navigation.goBack()}>
+         <MaterialCommunityIcons name="window-close" size={45} color="white" /> 
+      </TouchableOpacity>
      
     </View>
     <View style={{
